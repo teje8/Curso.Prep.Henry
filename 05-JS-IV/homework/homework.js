@@ -6,6 +6,29 @@ function crearGato(nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
+  if (nombre === undefined){
+    return "no ingresaste un nombre";
+  }
+  if (typeof nombre !== "string"){
+    return "el valor ingreasdo no es una cadena de texto";
+  }
+  if (edad === undefined){
+    return "no ingresaste una edad";
+  }
+  if (typeof edad !== "number"){
+    return "el valor ingresado no es un numero";
+  }
+  if (Math.sign(edad) === -1){
+    return "el numero no puede ser negativo";
+  }
+  const gato = {
+    nombre,
+    }
+    gato.edad = edad;
+    gato.meow = function(){
+      return "Meow!"
+    }
+    return gato;
 }
 
 
@@ -14,6 +37,8 @@ function agregarPropiedad(objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
+  objeto.property = null;
+  return objeto;
 }
 
 function invocarMetodo(objeto, metodo) {
